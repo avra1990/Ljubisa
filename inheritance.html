@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <title>Inheritance class-Nasledjivanje klasa</title>
+    </head>
+    <body>
+        <script>
+
+            class PocetnaKlasa {
+                constructor() {
+                    this.boja  = boja;
+                    this.planeta= planeta;
+                }  
+                predstaviSe() {
+                    console.log('Ja sam klasa!');
+                }                
+            }
+
+            let pocetna = new PocetnaKlasa('Zuto Sunce');
+
+
+
+            class PrvaKlasa extends pocetna {
+                    f1() {
+                        console.log('Ja sam prva nasledjena klasa.');
+                    }
+            }
+
+            let prvaKlasa = new PrvaKlasa();
+            prvaKlasa.predstaviSe();
+
+
+
+
+            class DrugaKlasa extends PrvaKlasa {
+                f2() {
+                    console.log('Ja sam druga nasledjena klasa.')
+                }
+            }
+
+            let drugaKlasa = new DrugaKlasa();
+            drugaKlasa.f2();
+
+
+
+        </script>
+    </body>
+</html>

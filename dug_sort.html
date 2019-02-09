@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <title>Sortiranje po dugu</title>
+    </head>
+    <body>
+        <script>
+            var duznici = [
+                {ime:'Milos',prezime:'Avramovic', dug:2000 ,datum: new Date(2000, 02, 03)},
+                {ime:'Ivan' ,prezime:'Petrovic', dug:120 ,datum: new Date(2005, 02, 04)},
+                {ime:'Milan' ,prezime:'Nikolic', dug:2000 ,datum: new Date(2012, 03, 09)},
+                {ime:'Jovan',prezime:'Petrovic' ,dug:150 ,datum: new Date(2006, 04, 10)},
+                {ime:'Nikola' ,prezime:'Ilic', dug:5600 ,datum: new Date(2002, 03, 05)},
+            ];
+           
+                
+                duznici.sort(function(a,b) {
+                        let dug_sort = a.dug.localeCompare(b.dug);
+                        
+                        if(dug_sort==0) {
+                            return a.datum.localeCompare(b.datum);
+                        }else {
+                            return dug_sort;
+                        }                  
+                });
+            console.log(duznici);
+        </script>
+    </body>
+</html>

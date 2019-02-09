@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset= 'UTF-8'>
+        <title>Dogadjaji</title>
+        <style>
+            table,th,td {
+                border: 5px;
+                border-collapse: collapse;
+            }
+
+            tr:nth-child(even) {
+                background-color: darkturquoise
+            }
+
+            tr:nth-child() {
+                background-color: lawngreen 
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <br>
+                <button type="button" id='dodRadID'>Dodaj radnika</button>
+                <tr>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Datum rodjenja</th>
+                    <th>Zanimanje</th>
+                </tr>
+            </thead>
+            <tbody id ='okvirTabeleID'>
+
+            </tbody>
+        </table>
+        <script type='text/javascript' scr = 'js/mustache.min.js'></script>
+        <script type='text/template' id='dodatakID'>
+            <tr>
+                <td>{{ime}}</td>
+                <td>{{prezime}}</td>
+                <td>{{datum_rodjenja}}</td>
+                <td>{{zanimanje}}</td>
+                <td>
+                    <button type ='button' id='proDatID'>Promeni datum</button>
+                </td>
+            </tr>
+        </script>
+    </body>
+
+</html>

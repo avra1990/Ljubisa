@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <title>Promise</title>
+    </head>
+    <body>
+        <script>
+            var a = 2;
+            var b = 3;
+            var c = 4;
+            var zbir = a + b;
+            var zbir_2 = a + c;
+            var zbir_3 = c + b;
+
+            new Promise(function(resolve,reject) {
+                setTimeout(function() {
+                    resolve(zbir)
+                    console.log(zbir);
+                }, 1000, a, b, c);
+            })
+            
+            .then(function() {
+                console.log(zbir);
+                return new Promise(function(resolve, reject) {
+                    setTimeout(function() {
+                    resolve(zbir_2)
+                }, 2000, a, b, c);
+             });
+            })
+            .then(function() {
+                console.log(zbir_2);
+                return new Promise(function(resolve, reject) {
+                    setTimeout(function() {
+                    resolve(zbir_3)
+                }, 3000, a, b, c);
+                });
+            })
+            .then(function() {
+                console.log(zbir_3);
+                setTimeout(function(resolve, reject) {
+                    console.log('Zavrseno!!!');
+                }, 4000, a, b, c)
+            });
+        </script>
+    </body>
+</html>

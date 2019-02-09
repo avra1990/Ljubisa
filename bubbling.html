@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<body style="border: 1px solid red;">
+    <p> Ja sam ovde bezveze !</p>
+    <div id="div1" style="border: 1px solid green;">
+        <p>Ja sam ovde bez veze !</p>
+        <div id="div2" style="border: 1px solid blue;">
+            <p>Ja sam ovde bez veze !</p>
+            <button>Klikni me !
+
+            </button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('click', function(event) {
+            console.log('Window / Click !');
+        });
+
+        let bodyElement = document.getElementsByTagName('body')[0];
+        bodyElement.addEventListener('click', function(event) {
+//            event.stopPropagation();
+            console.log('Body / Click !');
+        });
+
+        let div1Element = document.getElementById('div1');
+        div1Element.addEventListener('click', function(event) {
+            console.log('Div1 / Click !');
+        }, true);
+
+        let div2Element = document.getElementById('div2');
+        div2Element.addEventListener('click', function(event) {
+            console.log('Div2 / Click !');
+        });
+
+        let buttonElement = document.getElementsByTagName('button')[0];
+        buttonElement.addEventListener('click', function(event) {
+            console.log('Button / Click !');
+        }, true);
+    </script>
+</body>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Niz i nizu</title>
+    </head>
+    <body id='elementID'>
+        <div>
+            <button id='pokreniID'>Pokreni</button>
+        </div>
+        <script>
+            var objekat1 = {
+                
+                podaci1: {ime :'Milos', prezime :'Avramovic', licni_br:'064', kucni_br:'032', sluzbeni_br:'060'},
+                
+                pocetak:function() {
+                    let element=document.getElementById('elementID');
+                    element.addEventListener('Pozdrav1', function(event) {
+                        event.detail.push(objekat1.podaci1);
+                        element.dispatchEvent(new CustomEvent('Pozdrav3', {detail:event.detail}));
+                    });
+                    element.addEventListener('Pozdrav1', function(event) {
+                        console.log(event.detail);
+                    });
+                }
+            };
+
+                var objekat2 = {
+                
+                podaci2: {ime     :'Nikola',
+                          prezime :'Nikolic',
+                          licni_br:'060',kucni_br:'035',sluzbeni_br:'061'},
+
+                         pocetak:function() {
+                             let element=document.getElementById('elementID');
+                             element.addEventListener('Pozdrav2', function(event) {
+                                 event.detail.push(objekat2.podaci2);
+                                 element.dispatchEvent(new CustomEvent('Pozdrav1',{detail:event.detail}));
+                             });    
+                             element.addEventListener('Pozdrav2',function(event) {
+                                 console.log(event.detail);
+                             });
+                         }
+                };
+
+                var objekat3 ={
+                
+                podaci3:{ime     :'Marko',
+                         prezime :'Jovanovic',
+                         licni_br:'065',kucni_br:'011',sluzbeni_br:'062'},
+                        niz:[],
+                         pocetak: function() {
+                             let element=document.getElementById('elementID');
+                             element.addEventListener('click',function(event) {
+                                 objekat3.niz.push(objekat3.podaci3);
+                                 element.dispatchEvent(new CustomEvent('Pozdrav2',{detail:objekat3.niz}));
+                             });    
+                             element.addEventListener('Pozdrav3',function(event) {
+                                 console.log(event.detail);
+                             });
+                         }
+                };
+
+                objekat1.pocetak();
+                objekat2.pocetak();
+                objekat3.pocetak();
+               // console.log(objekat3.niz);
+
+        </script>
+    </body>
+
+</html>

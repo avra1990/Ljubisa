@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <title>Klasa vezba</title>
+    </head>
+    <body>
+        <script>
+
+            class Student {
+                constructor() {
+
+
+                        this.dnevnik = [];
+
+                            if(confirm('Dodajete novog studenta?')) {
+
+                                var ime         = prompt('Unesite ime studenta: ');
+                                if((ime !== null) && (ime !== ' ')) {
+                                    this.dnevnik.push(ime);
+                                } else {
+                                    console.log('Niste uneli podatke!');
+                                }
+
+                                var prezime     = prompt('Unesite preziime studenta: ');
+                                if((prezime !== null) && (prezime !== ' ')) {
+                                    this.dnevnik.push(prezime);
+                                } else {
+                                    console.log('Niste uneli podatke!');
+                                }
+
+                                var br_indeksa  = prompt('Unesite broj indeksa studenta: ');
+                                if((br_indeksa !== null) && (br_indeksa !== ' ')) {
+                                    this.dnevnik.push(br_indeksa);
+                                } else {
+                                    console.log('Niste uneli podatke!');
+                                }
+
+                                var gr_rodjenja = prompt('Unesite grad rodjenja studenta: ');
+                                if((gr_rodjenja !== null) && (gr_rodjenja !== ' ')) {
+                                    this.dnevnik.push(gr_rodjenja);
+                                } else {
+                                    console.log('Niste uneli podatke!');
+                                }
+
+                            }                       
+                    }
+                   
+                }
+
+
+            let student1 = new Student();
+            console.log(student1);
+
+        </script>
+    </body>
+</html>
